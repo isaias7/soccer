@@ -61,8 +61,10 @@
     "bootstrap": "^3.3.7",
     "bootstrap-sass": "^3.3.7",
     "jsonfile": "^3.0.0",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "unirest": "^0.5.1",
     "urlencoded-body-parser": "^2.0.1"
