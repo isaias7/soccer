@@ -26,7 +26,8 @@ class AppContainer extends React.Component {
         // console.log(res.data.data.match);
         // this.setState({ allMatches:res.data});
         const live = res.data.data.match.filter(function (match) {
-          return (match.status === '');
+          return (match.status === 'IN PLAY');
+          // CHANGE TO IN PLAY -------^
         });
         console.log('RESULTADO GET LIVE AXIOS ');
         console.log(live);
@@ -41,10 +42,10 @@ class AppContainer extends React.Component {
 
     if (this.state.allMatchesEvent === false) {
       //   this.getLiveScores();
-      this.state.home = this.state.allMatches[0].home_name;
-      this.state.away = this.state.allMatches[0].away_name;
-      this.state.score = this.state.allMatches[0].score;
-      this.state.time = this.state.allMatches[0].time;
+      this.state.home = this.state.allMatches[2].home_name;
+      this.state.away = this.state.allMatches[2].away_name;
+      this.state.score = this.state.allMatches[2].score;
+      this.state.time = this.state.allMatches[2].time;
     }
     // console.log('RESULTADO RENDER 😈');
     // console.log(this.state.allMatches);
@@ -64,12 +65,18 @@ class AppContainer extends React.Component {
     // console.log('Rnombre:' + this.state.time);
     // console.log(this.state.allMatches[1].status);
     return (
-      <div>
-        <div className='col-md-1'>
-          <input value={this.state.home} />
-          <input value={this.state.away} />
-          <input value={this.state.score} />
-          <input value={this.state.time} />
+      <div className='row'>
+        <div className='container'>
+          <div className="col-md-12 flex-container">
+            <li className='vs'>{this.state.home} </li>
+            <li className='vs'>{this.state.score} </li>
+            <li className='vs'>{this.state.away} </li>
+            <li className='vs'>{this.state.time} </li>
+          </div>
+        </div>
+        <div className="container">
+          <div className="col-lg-12"></div>
+          <iframe className="video" width="100%" height="600" src="https://www.youtube.com/embed/l1FJfr_spJQ" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     );

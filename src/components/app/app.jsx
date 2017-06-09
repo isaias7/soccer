@@ -12,7 +12,9 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <AppContainer />
+        <div className='container-fluid'>
+          <AppContainer />
+        </div>
       </Router>
     );
   }
